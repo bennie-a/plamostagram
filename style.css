@@ -1,6 +1,6 @@
 #header {
 	background-repeat: repeat-x;
-	width: 1024px;
+	width: 100%;
 	background-image: url(images/naviBack.jpg);
 	background-color: #f0f0f0;
 }
@@ -38,7 +38,7 @@
 	background-image: url(images/picBack.jpg);
 	position: relative;
 	overflow: hidden;
-	width: 1024px;
+	/* [disabled]width: 100%; */
 }
 #list ul {
 	padding: 0px;
@@ -46,16 +46,19 @@
 	position: relative;
 	left: 50%;
 	float: left;
-	width: 1024px;
+	width: 100%;
 	margin-top: 10px;
 	margin-bottom: 0px;
-	margin-right: 38px;
-	margin-left: 38px;
+	margin-right: 5px;
+	margin-left: 5px;
 }
 #list ul li{
 	float: left;
 	list-style-type: none;
-	margin: 5px;
+	margin-top: 5px;
+	margin-right: 3px;
+	margin-left: 3px;
+	margin-bottom: 5px;
 	position: relative;
 	left: -50%;
 }
@@ -75,13 +78,13 @@
 	border-bottom-style: solid;
 	border-bottom-color: #666666;
 	height: 80px;
-	width: 1024px;
+	width: 100%;
 }
 #tag {
 	height: 15px;
 }
 #contents {
-	width: 100%;
+	/* [disabled]width: 100%; */
 }
 #contents div {
 	margin-right: auto;
@@ -97,5 +100,4 @@ body {
 	margin: 0px;
 	padding: 0px;
 	background-color: #f0f0f0;
-	background-image: url(images/naviBack.jpg);
 }
