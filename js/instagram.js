@@ -1,43 +1,49 @@
-            $(function(){
-              var clientId = 'b570746883c541058a09f7e21e96dff5';
-              
-              $('.instagram').on('didLoadInstagram', didLoadInstagram);
-              $('.instagram').instagram({
-                hash:'プラモデル',
-                count: 20,
-                clientId: clientId
-              });
-          });
-         function createPhotoElement(photo) {
-              var innerHtml = $('<img>')
-                .attr('src', photo.images.low_resolution.url)
-                .attr('alt', photo.caption.text)
-                .attr('title', photo.caption.text)
-                .css('clear', 'left')
-                .css('float', 'left');
+$(window).scroll(function() {
+    var now = $(window).scrollTop();
+    var movePageTop = $('#movePageTop');
+    if (now > 300) {
+      movePageTop.fadeIn('slow');
+    } else {
+      movePageTop.fadeOut('slow');
+    }
+});
 
-              innerHtml = $('<a>')
-                .attr('target', '_blank')
-                .attr('href', photo.link)
-                .append(innerHtml);
+$(function(){
+  var clientId = 'b570746883c541058a09f7e21e96dff5';
+  var list = $('#list');
+  list.on('didLoadInstagram', didLoadInstagram);
+  list.instagram({
+    hash:'modelkit',
+    count: 50,
+    clientId: clientId
+  });
 
-              var caption = $('<div>').text(photo.caption.text)
-              .css('float', 'left')
-              .css('width', '300');
-              return $('<div>')
-                .attr('id', photo.id)
-                .append(innerHtml)
-                .append(caption);
-        }
+  $('#goToTop').click(function() {
+    $("html,body").animate({scrollTop:0},"slow");
+  });
+});
 
-        function didLoadInstagram(event, response) {
-          var that = this;
-          if (jQuery.isEmptyObject(response.data)) {
-            $(that).text('結果がありません');
-            return;
-          }
+function createPhotoElement(photo) {
+    var image = $('<img>')
+      .attr('src', photo.images.low_resolution.url)
+      .attr('alt', photo.caption.text);
 
-          $.each(response.data, function(i, photo) {
-            $(that).append(createPhotoElement(photo));
-          });
-        }
+    image = $('<a>')
+      .attr('target', '_blank')
+      .attr('href', photo.link)
+      .append(image);
+
+    return $('<li>').attr('id', photo.id).append(image);
+}
+
+function didLoadInstagram(event, response) {
+  var that = this;
+  if (jQuery.isEmptyObject(response.data)) {
+    $(that).text('');
+    return;
+  }
+
+  $.each(response.data, function(i, photo) {
+    $('#list ul').append(createPhotoElement(photo));
+  });
+}
