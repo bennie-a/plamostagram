@@ -4,7 +4,7 @@
 	background-image: url(images/naviBack.jpg);
 	background-color: #f0f0f0;
 	padding-top: 10px;
-	padding-bottom: 30px;
+	padding-bottom: 20px;
 }
 #footer {
 	background-image: url(images/picBack.jpg);
@@ -107,6 +107,7 @@ body {
 	width: 306px;
 	border: 1px solid #504946;
 	height: 306px;
-}#footer a {
+}
+#footer a {
 	display: none;
 }
