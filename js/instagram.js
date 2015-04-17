@@ -6,35 +6,27 @@ $(window).scroll(function() {
     } else {
       movePageTop.fadeOut('slow');
     }
-
-//    var header = $('#header');
-//    var list = $('#list');
-//    if ((header.height() + list.height()) - now < 600) {
-//        loadInstagram(list.data("json"));
-//    }
-
 });
 
 $(function(){
-  var clientId = 'b570746883c541058a09f7e21e96dff5';
-  var list = $('#list');
-  list.on('didLoadInstagram', didLoadInstagram);
-  list.instagram({
-    hash:'modelkit',
-    count: 20,
-    clientId: clientId
-  });
+		$("#more").on('inview', function(event, isInView, visiblePartX, visiblePartY) { 
+			if (visiblePartY == 'both') {
+				searchInstagram();
+			}
+			
+			var delaySpeed = 100;
+        		var fadeSpeed = 1000;
+        		$('ul li').each(function(i){
+            		$(this).delay(1000).css({opacity:'0'}).animate({opacity:'1'},fadeSpeed);
+	        });
+		});
 
-  $('#goToTop').click(function() {
-    $("html,body").animate({scrollTop:0},"slow");
-  });
+	$('#goToTop').click(function() {
+		$("html,body").animate({scrollTop:0},"slow");
+	});
 });
 
-$(window).load(function() {
-	
-});
-
-var next_url = 'next-url';
+var next_url;
 
 function searchInstagram() {
 	  var clientId = 'b570746883c541058a09f7e21e96dff5';
@@ -42,9 +34,9 @@ function searchInstagram() {
 	  list.on('didLoadInstagram', didLoadInstagram);
 	  list.instagram({
   		hash:'modelkit',
-  		count: 20,
-  		clientId: clientId,
-      url: list.data(next_url)         
+  		count: 30,
+	     url: next_url,         
+  		clientId: clientId
 	  });
 }
 
@@ -67,15 +59,11 @@ function didLoadInstagram(event, response) {
     $(that).text('');
     return;
   }
+
+  console.log(response.pagination.next_url);
   $.each(response.data, function(i, photo) {
-    $('#list ul').append(createPhotoElement(photo));
+	    $('#more').before(createPhotoElement(photo));
   });
   
-	var delaySpeed = 100;
-	var fadeSpeed = 1000;
-	$('#list ul li').each(function(i){
-		$(this).delay(i*(delaySpeed)).css({opacity:'0'}).animate({opacity:'1'}, fadeSpeed);
-	});
-
-  $('#list').data(next_url, response.pagination.next_url);
+	next_url = response.pagination.next_url;
 }
