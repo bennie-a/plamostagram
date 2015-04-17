@@ -111,3 +111,11 @@ body {
 #footer a {
 	display: none;
 }
+#logo {
+	width: 320px;
+	height: 80px;
+}
+#about {
+	width: 99px;
+	height: 28px;
+}

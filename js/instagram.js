@@ -6,6 +6,13 @@ $(window).scroll(function() {
     } else {
       movePageTop.fadeOut('slow');
     }
+
+//    var header = $('#header');
+//    var list = $('#list');
+//    if ((header.height() + list.height()) - now < 600) {
+//        loadInstagram(list.data("json"));
+//    }
+
 });
 
 $(function(){
@@ -14,7 +21,7 @@ $(function(){
   list.on('didLoadInstagram', didLoadInstagram);
   list.instagram({
     hash:'modelkit',
-    count: 40,
+    count: 20,
     clientId: clientId
   });
 
@@ -24,16 +31,26 @@ $(function(){
 });
 
 $(window).load(function() {
-  $("#list img").lazyload({
-    effect: 'fadeIn',
-        effectspeed: 1000
-  });
+	
 });
+
+var next_url = 'next-url';
+
+function searchInstagram() {
+	  var clientId = 'b570746883c541058a09f7e21e96dff5';
+	  var list = $('#list');
+	  list.on('didLoadInstagram', didLoadInstagram);
+	  list.instagram({
+  		hash:'modelkit',
+  		count: 20,
+  		clientId: clientId,
+      url: list.data(next_url)         
+	  });
+}
 
 function createPhotoElement(photo) {
     var image = $('<img>')
-       .attr('src', 'http://placehold.it/306x306/ff6347')
-      .attr('data-original', photo.images.low_resolution.url)
+       .attr('src', photo.images.low_resolution.url)
       .attr('alt', photo.caption.text);
 
     image = $('<a>')
@@ -50,8 +67,15 @@ function didLoadInstagram(event, response) {
     $(that).text('');
     return;
   }
-  console.log(response.data.length);
   $.each(response.data, function(i, photo) {
     $('#list ul').append(createPhotoElement(photo));
   });
+  
+	var delaySpeed = 100;
+	var fadeSpeed = 1000;
+	$('#list ul li').each(function(i){
+		$(this).delay(i*(delaySpeed)).css({opacity:'0'}).animate({opacity:'1'}, fadeSpeed);
+	});
+
+  $('#list').data(next_url, response.pagination.next_url);
 }
