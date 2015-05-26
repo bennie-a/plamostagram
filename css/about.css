@@ -1,0 +1,48 @@
+@charset "utf-8";
+#contents {
+	margin: 0px auto;
+	width: 50%;
+
+}
+body  {
+	background-color: #EBE9E7;
+	background-image: url(../images/background.jpg);
+}
+
+
+#contents h1 {
+	text-align: center;
+	width: 100%;
+	padding-bottom: 5px;
+	border-bottom: 8px solid #004D4D;
+}
+
+#contents h2 {
+	font-size: 18px;
+	font-weight: bold;
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+#article {
+	margin-right: auto;
+	margin-left: auto;
+	width: 90%;
+	padding: 20px;
+}
+#article div {
+	padding-bottom: 15px;
+}
+#contact p {
+	padding-bottom: 10px;
+}
+#mail_icon {
+	padding-right: 7px;
+}
+#contents a {
+	color: #0066CC;
+	font-weight: bold;
+}
+.hyphen {
+	padding-left: 20px;
+	padding-right: 20px;
+}
