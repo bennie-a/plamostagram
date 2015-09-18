@@ -1,15 +1,7 @@
-//$(window).scroll(function () {
-//    var now = $(window).scrollTop();
-//    var movePageTop = $('#movePageTop');
-//    if (now > 300) {
-//        movePageTop.fadeIn('slow');
-//    } else {
-//        movePageTop.fadeOut('hide');
-//    }
-//});
 var clientId = 'b570746883c541058a09f7e21e96dff5';
 $(function () {
     var $more = $("#more");
+
     $more.on('didLoadInstagram', didLoadInstagram);
     $more.on('inview', function (event, isInView, visiblePartX, visiblePartY) {
         if (isInView && visiblePartY == 'both') {
@@ -23,9 +15,14 @@ $(function () {
     });
 
     $('#goToTop').click(function () {
-        $("html,body").animate({
-            scrollTop: 0
-        }, "slow");
+        var timeout = 0;
+        if (timeout == 0) {
+            timeout = setTimeout(function () {
+                $("html,body").animate({
+                    scrollTop: 0
+                }, "slow");
+            }, 500);
+        }
     });
 });
 
@@ -49,7 +46,9 @@ function createPhotoElement(photo) {
         .attr('href', photo.link)
         .append(div);
 
-    return $('<li>').attr('id', photo.id).addClass('thumbnail').addClass('figure').append(image).append(div);
+    var thumbnail = $('<li>');
+    thumbnail;
+    return thumbnail.attr('id', photo.id).addClass('thumbnail').addClass('figure').append(image).append(div);
 }
 
 function didLoadInstagram(event, response) {
@@ -66,4 +65,5 @@ function didLoadInstagram(event, response) {
     });
 
     next_url = response.pagination.next_url;
+
 }

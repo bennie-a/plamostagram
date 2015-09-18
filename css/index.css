@@ -11,7 +11,6 @@
 #photos {
     padding: 0px;
     height: 100%;
-    float: left;
     width: 100%;
     margin-bottom: 0px;
     text-align: center;
@@ -23,11 +22,16 @@
     width: 100%;
     text-align: center;
     display: inline-block;
+    padding-bottom: 30px;
+    font-family: "Yu Gothic", "メイリオ", sans-serif;
+}
+
+#loading {
     color: #222222;
     font-weight: bold;
     font-size: 1.8em;
-    padding-bottom: 30px;
-    font-family: "Yu Gothic", "メイリオ", sans-serif;
+    padding-top: 5px;
+    padding-right: 7px;
 }
 
 #more img {
@@ -39,15 +43,15 @@
     list-style-type: none;
     position: relative;
     display: inline-block;
-    height: 200px;
-    width: 200px;
+    height: 220px;
+    width: 220px;
     margin: 2px;
     border: 1px solid #898880;
 }
 
 #photos li img {
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
 }
 
 ul.info {
@@ -77,7 +81,7 @@ ul.info li {
 .figure {
     position: relative;
     overflow: hidden;
-    width: 200px;
+    width: 220px;
     text-align: left;
     padding-left: 0px;
     margin-left: 0px;
@@ -88,8 +92,8 @@ ul.info li {
     top: 0;
     left: 0;
     z-index: 1;
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     background: rgba(0, 0, 0, .6);
     -webkit-transition: .3s;
     transition: .3s;
@@ -102,7 +106,11 @@ ul.info li {
     opacity: 1;
 }
 
-#movePageTop {}
+#footer {
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
+}
 
 #goToTop {
     background: url("../images/back.gif") no-repeat;

@@ -12,7 +12,7 @@
 body {
     margin: 0px;
     padding: 0px;
-    background: #FAFDFF url("../images/background.png");
+    background: #FBF9FC url("../images/background.png");
 }
 
 h1 {
@@ -47,14 +47,13 @@ h2 {
 
 #footer {
     background-color: #000;
-    overflow: hidden;
-    position: fixed;
     width: 100%;
-    bottom: 0px;
     font-size: 14px;
-    z-index: 2;
     border-top: 1px solid #FAFDFF;
     height: 58px;
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
 }
 
 .display_none {
