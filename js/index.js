@@ -1,13 +1,12 @@
-$(window).scroll(function () {
-    var now = $(window).scrollTop();
-    var movePageTop = $('#movePageTop');
-    if (now > 300) {
-        movePageTop.fadeIn('slow');
-    } else {
-        movePageTop.fadeOut('slow');
-    }
-});
-
+//$(window).scroll(function () {
+//    var now = $(window).scrollTop();
+//    var movePageTop = $('#movePageTop');
+//    if (now > 300) {
+//        movePageTop.fadeIn('slow');
+//    } else {
+//        movePageTop.fadeOut('hide');
+//    }
+//});
 var clientId = 'b570746883c541058a09f7e21e96dff5';
 $(function () {
     var $more = $("#more");

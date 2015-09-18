@@ -5,6 +5,7 @@
     width: 100%;
     padding-bottom: 50px;
     height: auto;
+    min-height: 700px;
 }
 
 #photos {
@@ -58,6 +59,7 @@ ul.info li {
     display: inline-block;
     padding-right: 10px;
     font-size: 1.1em;
+    color: #FAFDFF;
 }
 
 .likeit {
@@ -98,4 +100,14 @@ ul.info li {
 .figure:hover .caption {
     color: white;
     opacity: 1;
+}
+
+#movePageTop {}
+
+#goToTop {
+    background: url("../images/back.gif") no-repeat;
+    width: 54px;
+    height: 39px;
+    float: right;
+    cursor: pointer;
 }

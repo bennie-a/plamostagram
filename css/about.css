@@ -1,48 +1,74 @@
 @charset "utf-8";
 #contents {
-	margin: 0px auto;
-	width: 50%;
-
+    margin: 0px auto;
+    width: 50%;
+    min-width: 700px;
 }
-body  {
-	background-color: #EBE9E7;
-	background-image: url(../images/background.jpg);
-}
-
 
 #contents h1 {
-	text-align: center;
-	width: 100%;
-	padding-bottom: 5px;
-	border-bottom: 8px solid #004D4D;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 5px;
+    border-bottom: 5px solid #004D4D;
 }
 
 #contents h2 {
-	font-size: 18px;
-	font-weight: bold;
-	padding-top: 10px;
-	padding-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    border-left: 7px solid #333;
 }
+
 #article {
-	margin-right: auto;
-	margin-left: auto;
-	width: 90%;
-	padding: 20px;
+    padding: 20px;
+    padding-left: 0;
+    width: 87%;
+    margin: 0 auto;
 }
+
 #article div {
-	padding-bottom: 15px;
+    padding-bottom: 15px;
 }
+
+#article p {
+    width: 80%;
+}
+
+#creator dt {
+    width: 90px;
+    text-align: right;
+    clear: left;
+    float: left;
+}
+
+#creator dt:after {
+    margin-left: 10px;
+    content: "-";
+}
+
+#creator dd {
+    padding-left: 10px;
+    float: left;
+}
+
+#contact {
+    clear: left;
+    padding-top: 15px;
+}
+
 #contact p {
-	padding-bottom: 10px;
+    padding-bottom: 10px;
 }
+
 #mail_icon {
-	padding-right: 7px;
+    padding-right: 7px;
 }
+
 #contents a {
-	color: #0066CC;
-	font-weight: bold;
+    color: #0066CC;
 }
+
 .hyphen {
-	padding-left: 20px;
-	padding-right: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
