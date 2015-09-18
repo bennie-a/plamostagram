@@ -1,76 +1,76 @@
 @charset "utf-8";
-
 #list {
-	background-color: #666666;
-	position: relative;
-	overflow: hidden;
-	width: 100%;
-	padding-bottom: 50px;
-	height: auto;
-	background-image: url(../images/list_background.jpg);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-bottom: 50px;
+    height: auto;
 }
+
 #list ul {
-	padding: 0px;
-	height: 100%;
-	float: left;
-	width: 100%;
-	margin-top: 20px;
-	margin-bottom: 0px;
-	text-align: center;
-	overflow: hidden;
+    padding: 0px;
+    height: 100%;
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    text-align: center;
+    overflow: hidden;
 }
+
 #more {
-	height: 306px;
-	width: 306px;
-	text-align: center;
-	display: inline;
-	color: #EBE9E7;
-	font-weight: bold;
-	font-size: 24px;
-	font-family: "Lucida Console", Monaco, monospace;
+    height: 306px;
+    width: 306px;
+    text-align: center;
+    display: inline;
+    color: #EBE9E7;
+    font-weight: bold;
+    font-size: 24px;
+    font-family: "Lucida Console", Monaco, monospace;
 }
+
 #list li {
-	list-style-type: none;
-	position: relative;
-	display: inline-block;
-	height: 310px;
-	width: 310px;
-	margin: 3px;
+    list-style-type: none;
+    position: relative;
+    display: inline-block;
+    height: 310px;
+    width: 310px;
+    margin: 3px;
 }
 
 #list li img {
-	width: 306px;
-	border: 1px solid #504946;
-	height: 306px;
+    width: 306px;
+    border: 1px solid #504946;
+    height: 306px;
 }
 
-
 .figure {
-	position: relative;
-	overflow: hidden;
-	width: 306px;
-	text-align: left;
-	padding-left: 0px;
-	margin-left: 0px;
+    position: relative;
+    overflow: hidden;
+    width: 306px;
+    text-align: left;
+    padding-left: 0px;
+    margin-left: 0px;
 }
 
 .caption {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 1;
-	width: 290px;
-	height: 100%;
-	background: rgba(0,0,0,.6);
-	-webkit-transition: .3s;
-	transition: .3s;
-	opacity: 0;
-	padding-top: 30px;
-	word-break: break-all;
-	padding-left: 9px;
-	padding-right: 9px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 290px;
+    height: 100%;
+    background: rgba(0, 0, 0, .6);
+    -webkit-transition: .3s;
+    transition: .3s;
+    opacity: 0;
+    padding-top: 30px;
+    word-break: break-all;
+    padding-left: 9px;
+    padding-right: 9px;
 }
+
 .figure:hover .caption {
-	color: white;
-	opacity: 1;
+    color: white;
+    opacity: 1;
 }
