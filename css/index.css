@@ -7,7 +7,7 @@
     height: auto;
 }
 
-#list ul {
+#photos {
     padding: 0px;
     height: 100%;
     float: left;
@@ -15,37 +15,61 @@
     margin-bottom: 0px;
     text-align: center;
     overflow: hidden;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
 }
 
 #more {
     width: 100%;
     text-align: center;
     display: inline-block;
-    color: #EBE9E7;
+    color: #222222;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 1.8em;
+    padding-bottom: 30px;
+    font-family: "Yu Gothic", "メイリオ", sans-serif;
 }
 
 #more img {
-    padding-bottom: 30px;
-    width: 48px;
-    height: 48px;
+    width: 24px;
+    height: 24px;
 }
 
-#list li {
+.thumbnail {
     list-style-type: none;
     position: relative;
     display: inline-block;
     height: 200px;
     width: 200px;
-    margin: 3px;
+    margin: 2px;
     border: 1px solid #898880;
 }
 
-#list li img {
+#photos li img {
     width: 200px;
     height: 200px;
+}
+
+ul.info {
+    position: relative;
+    top: 47%;
+}
+
+ul.info li {
+    display: inline-block;
+    padding-right: 10px;
+    font-size: 1.1em;
+}
+
+.likeit {
+    background: url("../images/likeit.png") no-repeat;
+    background-size: contain;
+    padding-left: 30px;
+}
+
+.comment {
+    background: url("../images/comment.png") no-repeat;
+    background-size: contain;
+    padding-left: 30px;
 }
 
 .figure {
@@ -62,16 +86,13 @@
     top: 0;
     left: 0;
     z-index: 1;
-    width: 190px;
-    height: 190px;
+    width: 200px;
+    height: 200px;
     background: rgba(0, 0, 0, .6);
     -webkit-transition: .3s;
     transition: .3s;
     opacity: 0;
-    padding-top: 10px;
-    word-break: break-all;
-    padding-left: 5px;
-    padding-right: 5px;
+    text-align: center;
 }
 
 .figure:hover .caption {

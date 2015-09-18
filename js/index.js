@@ -34,19 +34,23 @@ var next_url;
 
 function createPhotoElement(photo) {
     caption = photo.caption ? photo.caption.text : photo.tags.join(" ");
-    limit = 300;
+    limit = 50;
     caption_text = caption.length < limit ? caption : caption.substr(0, limit) + "...";
     var image = $('<img>')
         .attr('src', photo.images.low_resolution.url)
         .attr('alt', caption_text);
 
-    var div = $('<div>').text(caption_text).addClass('caption');
+    var ul = $('<ul>').addClass('info');
+    ul.append($('<li>').text(photo.likes.count).addClass('likeit'));
+    ul.append($('<li>').text(photo.comments.count).addClass('comment'));
+    var div = $('<div>').addClass('caption');
+    div.append(ul);
     div = $('<a>')
         .attr('target', '_new')
         .attr('href', photo.link)
         .append(div);
 
-    return $('<li>').attr('id', photo.id).addClass('figure').append(image).append(div);
+    return $('<li>').attr('id', photo.id).addClass('thumbnail').addClass('figure').append(image).append(div);
 }
 
 function didLoadInstagram(event, response) {
@@ -56,7 +60,7 @@ function didLoadInstagram(event, response) {
         return;
     }
 
-    var nesting = $("#list ul");
+    var nesting = $("#photos");
     $.each(response.data, function (i, photo) {
         nesting.append(createPhotoElement(photo));
         $('#more').before(nesting);
